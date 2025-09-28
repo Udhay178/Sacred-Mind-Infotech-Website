@@ -1,0 +1,264 @@
+/* ---------------- Body ---------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* ---------------- Header ---------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 40px;
+    background: #222;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+/* Floating logo animation */
+.floating-logo {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Pencil title animation */
+.pencil-text {
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #7d2b69;
+    /* Plum */
+    width: 0;
+    animation: typing 4s steps(30, end) forwards, blink 0.7s step-end infinite;
+    color: #fff;
+    margin: 0;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 360px;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* ---------------- Navigation ---------------- */
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: #a52c69;
+    /* Royal Heath */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #7d2b69;
+    /* Plum */
+}
+
+/* ---------------- Hero Section ---------------- */
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(120deg, #7d2b69 0%, #a52c69 100%);
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* ---------------- Features / Courses / Videos / Jobs / About ---------------- */
+.features,
+.courses-grid,
+.videos-grid,
+.jobs-grid,
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.feature-card,
+.course-card,
+.video-card,
+.job-card {
+    background: #4f204f;
+    /* Finn */
+    color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.feature-card:hover,
+.course-card:hover,
+.video-card:hover,
+.job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    background: #986078;
+    /* Strikemaster */
+}
+
+/* ---------------- Contact Form ---------------- */
+.contact-form {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    resize: none;
+}
+
+.contact-form button,
+.contact-form .btn {
+    background-color: #a52c69;
+    /* Royal Heath */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover,
+.contact-form .btn:hover {
+    background-color: #7d2b69;
+    /* Plum */
+}
+
+/* ---------------- Buttons (General) ---------------- */
+.btn {
+    background-color: #a52c69;
+    /* Royal Heath */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #7d2b69;
+    /* Plum */
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* ---------------- Scroll-triggered animations ---------------- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width: 900px) {
+
+    .feature-card,
+    .course-card,
+    .video-card,
+    .job-card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .feature-card,
+    .course-card,
+    .video-card,
+    .job-card {
+        width: 100%;
+    }
+
+    .contact-form form {
+        width: 90%;
+    }
+}
